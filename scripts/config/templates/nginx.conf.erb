@@ -38,8 +38,8 @@ http {
   client_body_timeout 5;
 
   server {
-    listen <%= port %> reuseport;
-    listen 443 ssl http2;
+listen 443 ssl http2 default_server;
+listen [::]:443 ssl http2 default_server;
     charset <%= encoding %>;
     port_in_redirect off;
     keepalive_timeout 5;
